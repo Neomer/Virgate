@@ -6,7 +6,7 @@
 
 QT       -= gui
 
-MODULES += SDK.Core.RandomHelper SDK.Core.Guid
+MODULES += SDK.Core.RandomHelper
 
 TARGET = Guid
 TEMPLATE = lib
@@ -40,13 +40,4 @@ include(../../../paths.pri)
 
 INCLUDEPATH += $$SDK_DIR
 
-for(item, MODULES) {
-    split_modules = $$split(item, .)
-    module_name = $$last(split_modules)
-    join_modules = $$join(split_modules, /)
-    build_type = release
-    CONFIG(debug, debug|release) {
-        build_type = debug
-    }
-    message($$join_modules/$$build_type/$$module_name)
-}
+include(../../../modules.pri)
