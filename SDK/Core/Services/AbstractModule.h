@@ -5,18 +5,14 @@
 #include <QThread>
 #include <Core/Guid/Guid.h>
 
-class SERVICESSHARED_EXPORT IAbstractModule : private QThread
+class SERVICESSHARED_EXPORT AbstractModule
 {
 
 public:
-    IAbstractModule();
+    AbstractModule();
 
     virtual void exec() = 0;
     virtual Guid moduleId() = 0;
-
-    // QThread interface
-protected:
-    void run() override;
 };
 
 #endif // IABSTRACTMODULE_H
