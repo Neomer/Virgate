@@ -8,5 +8,6 @@ SUBDIRS += \
     SDK/Core/Services \
     Services/DatabaseService \
     SDK/Core/Exceptions \
-    Services/AuthenticationService
+    Services/AuthenticationService \
+    ServiceScheduller
 
