@@ -6,6 +6,8 @@
 
 QT       -= gui
 
+DEPEND_MODULES += SDK.Logs.Logger
+
 TARGET = Helpers
 TEMPLATE = lib
 
@@ -23,12 +25,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-        RandomHelper.cpp
+        RandomHelper.cpp \
+    LogHelper.cpp
 
 HEADERS += \
         RandomHelper.h \
         randomhelper_global.h \ 
-    ../Defines.h
+    ../Defines.h \
+    LogHelper.h
 
 unix {
     target.path = /usr/lib

@@ -1,6 +1,7 @@
 #include "BinarySerializer.h"
 #include <QDebug>
 #include "SerializationException.h"
+#include <Core/Helpers/LogHelper.h>
 
 void BinarySerializer::SerializeObjectToBinary(AbstractBinarySerializable *object, QByteArray &buffer)
 {
@@ -10,6 +11,7 @@ void BinarySerializer::SerializeObjectToBinary(AbstractBinarySerializable *objec
     }
     catch (SerializationException &ex)
     {
-        qDebug() << "Catch exception" << ex.getMessage();
+        LogHelper::Instance().getCurrent()->write("Catch exception ");
+        LogHelper::Instance().getCurrent()->writeLine(ex.getMessage());
     }
 }

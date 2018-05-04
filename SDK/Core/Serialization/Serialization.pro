@@ -9,7 +9,8 @@ QT       -= gui
 TARGET = Serialization
 TEMPLATE = lib
 
-DEPEND_MODULES += SDK.Core.Guid
+DEPEND_MODULES += SDK.Core.Guid \
+                  SDK.Core.Helpers
 
 
 DEFINES += SERIALIZATION_LIBRARY

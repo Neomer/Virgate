@@ -1,16 +1,11 @@
 #include "RandomHelper.h"
 #include <QDateTime>
 #include <iostream>
+#include <math.h>
 
 #define MAX_INT         0xFFFFFFFF
 
 using namespace std;
-
-RandomHelper &RandomHelper::Instance()
-{
-    static RandomHelper inst;
-    return inst;
-}
 
 int RandomHelper::nextInt()
 {

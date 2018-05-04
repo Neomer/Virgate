@@ -3,7 +3,6 @@
 
 #include "randomhelper_global.h"
 #include <Core/Defines.h>
-#include <math.h>
 
 ///
 /// \brief RandomHelper класс для генерации последовательности псевдо-случайных чисел
@@ -13,11 +12,6 @@ class RANDOMHELPERSHARED_EXPORT RandomHelper
     SINGLETON(RandomHelper)
 
 public:
-    ///
-    /// \brief Instance вовзращает экземпляр класса
-    /// \return
-    ///
-    static RandomHelper &Instance();
     ///
     /// \brief nextInt возвращает следующее в последовательности случайное число
     /// \return

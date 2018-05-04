@@ -12,6 +12,7 @@
 #define SINGLETON(name)         private: name(); \
                                 ~name() = delete; \
                                 name(name const &) = delete; \
-                                name& operator= (name const&) = delete;
+                                name& operator= (name const&) = delete; \
+                                public: static name &Instance() { static name inst; return inst; }
 
 #endif // DEFINES_H
