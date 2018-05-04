@@ -11,7 +11,8 @@ TEMPLATE = lib
 
 DEPEND_MODULES += SDK.Core.Helpers \
                   SDK.Core.Guid \
-                  SDK.Core.Services
+                  SDK.Core.Services \
+                  SDK.Core.Serialization
 
 DEFINES += DATABASESERVICE_LIBRARY
 
@@ -27,11 +28,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-        DatabaseService.cpp
+        DatabaseService.cpp \
+        SomeEntity.cpp
 
 HEADERS += \
         DatabaseService.h \
-        databaseservice_global.h 
+        databaseservice_global.h \ 
+        SomeEntity.h
 
 unix {
     target.path = /usr/lib

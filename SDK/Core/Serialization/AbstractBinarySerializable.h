@@ -8,7 +8,7 @@ class SERIALIZATIONSHARED_EXPORT AbstractBinarySerializable
 {
 public:
     virtual void toBinary(QByteArray &buffer) = 0;
-    virtual void fromBinary(const QByteArray &buffer) = 0;
+    virtual void fromBinary(QByteArray &buffer) = 0;
 };
 
 #endif // SERIALIZATION_H

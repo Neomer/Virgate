@@ -2,7 +2,6 @@
 #define XMLSERIALIZER_H
 
 #include <QDomDocument>
-
 #include <Core/Defines.h>
 #include "AbstractXmlSerializable.h"
 
