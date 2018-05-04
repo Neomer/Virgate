@@ -32,14 +32,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         DatabaseService.cpp \
-        SomeEntity.cpp \
     DatabaseServiceConfiguration.cpp \
     DatabaseConfiguration.cpp
 
 HEADERS += \
         DatabaseService.h \
         databaseservice_global.h \ 
-        SomeEntity.h \
     DatabaseServiceConfiguration.h \
     DatabaseConfiguration.h
 
