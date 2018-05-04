@@ -10,6 +10,7 @@ class JsonSerializer
 
 public:
     static void SerializeObjectToJson(AbstractJsonSerializable *object, QJsonObject &buffer);
+    static void SaveToFile(QJsonObject &object, QString fileName);
 };
 
 #endif // JSONSERIALIZER_H

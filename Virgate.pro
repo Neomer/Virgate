@@ -1,11 +1,11 @@
 TEMPLATE = subdirs
 
 SUBDIRS += \
-    SDK/Core/Guid \
+    SDK/Logs/Logger \
+    SDK/Core/Serialization \
     SDK/Core/Helpers \
+    SDK/Core/Guid \
     SDK/Core/Services \
     Services/DatabaseService \
-    SDK/Core/Serialization \
-    SDK/Logs/Logger
+    SDK/Core/Exceptions
 
-INCLUDEPATH += $$PWD

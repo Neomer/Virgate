@@ -11,7 +11,8 @@ TARGET = Serialization
 TEMPLATE = lib
 
 DEPEND_MODULES += SDK.Core.Guid \
-                  SDK.Core.Helpers
+                  SDK.Core.Helpers \
+                  SDK.Core.Exceptions
 
 
 DEFINES += SERIALIZATION_LIBRARY
