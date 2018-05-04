@@ -7,5 +7,6 @@ SUBDIRS += \
     SDK/Core/Guid \
     SDK/Core/Services \
     Services/DatabaseService \
-    SDK/Core/Exceptions
+    SDK/Core/Exceptions \
+    Services/AuthenticationService
 
