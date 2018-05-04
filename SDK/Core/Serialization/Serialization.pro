@@ -29,7 +29,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     BinarySerializer.cpp \
-    XmlSerializer.cpp
+    XmlSerializer.cpp \
+    JsonSerializer.cpp
 
 HEADERS += \
         serialization_global.h \ 
@@ -38,7 +39,8 @@ HEADERS += \
     AbstractXmlSerializable.h \
     BinarySerializer.h \
     SerializationException.h \
-    XmlSerializer.h
+    XmlSerializer.h \
+    JsonSerializer.h
 
 unix {
     target.path = /usr/lib

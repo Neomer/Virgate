@@ -6,29 +6,16 @@ SomeEntity::SomeEntity()
 
 }
 
-
-void SomeEntity::toBinary(QByteArray &buffer)
+void SomeEntity::toJson(QJsonObject &object)
 {
-    QDataStream stream(&buffer, QIODevice::WriteOnly);
-
-    stream << getSomeBoolProperty()
-           << getSomeIntProperty()
-           << getSomeStringProperty();
+    object["bool_property"] = getSomeBoolProperty();
+    object["int_property"] = getSomeIntProperty();
+    object["string_property"] = getSomeStringProperty();
 }
 
-void SomeEntity::fromBinary(QByteArray &buffer)
+void SomeEntity::fromJson(const QJsonObject &object)
 {
-    QDataStream stream(&buffer, QIODevice::ReadOnly);
-
-    bool boolVar;
-    int intVar;
-    QString stringVar;
-
-    stream >> boolVar;
-    stream >> intVar;
-    stream >> stringVar;
-
-    setSomeBoolProperty(boolVar);
-    setSomeIntProperty(intVar);
-    setSomeStringProperty(stringVar);
+    setSomeBoolProperty(object["bool_property"].toBool());
+    setSomeIntProperty(object["int_property"].toInt());
+    setSomeStringProperty(object["string_property"].toString());
 }

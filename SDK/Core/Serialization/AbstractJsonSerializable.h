@@ -1,13 +1,15 @@
 #ifndef ABSTRACTJSONSERIALIZABLE_H
 #define ABSTRACTJSONSERIALIZABLE_H
 
+#include <QJsonObject>
+
 #include "serialization_global.h"
 
 class SERIALIZATIONSHARED_EXPORT AbstractJsonSerializable
 {
 public:
-    virtual void toJson() = 0;
-    virtual void fromJson() = 0;
+    virtual void toJson(QJsonObject &object) = 0;
+    virtual void fromJson(const QJsonObject &object) = 0;
 };
 
 

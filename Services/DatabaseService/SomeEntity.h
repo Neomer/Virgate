@@ -4,9 +4,9 @@
 #include <QObject>
 
 #include <Core/Defines.h>
-#include <Core/Serialization/AbstractBinarySerializable.h>
+#include <Core/Serialization/AbstractJsonSerializable.h>
 
-class SomeEntity : public AbstractBinarySerializable
+class SomeEntity : public AbstractJsonSerializable
 {
 public:
     SomeEntity();
@@ -15,10 +15,10 @@ public:
     PROP(int, SomeIntProperty)
     PROP(QString, SomeStringProperty)
 
-    // AbstractBinarySerializable interface
+    // AbstractJsonSerializable interface
 public:
-    void toBinary(QByteArray &buffer) override;
-    void fromBinary(QByteArray &buffer) override;
+    void toJson(QJsonObject &object) override;
+    void fromJson(const QJsonObject &object) override;
 };
 
 #endif // SOMEENTITY_H
