@@ -15,4 +15,4 @@ CONFIG(debug, debug|release) {
 #    UI_DIR = $$ROOT_DIR/build/release/.tmp
 }
 
-
+INCLUDEPATH += $$SDK_DIR

@@ -3,18 +3,16 @@
 
 #include <QObject>
 
+#include <Core/Defines.h>
 #include "serialization_global.h"
 #include "AbstractBinarySerializable.h"
 
 class SERIALIZATIONSHARED_EXPORT BinarySerializer
 {
+    STATIC(BinarySerializer)
+
 public:
     static void SerializeObjectToBinary(AbstractBinarySerializable *object, QByteArray &buffer);
-
-private:
-    BinarySerializer() = delete;
-    ~BinarySerializer() = delete;
-    BinarySerializer(const BinarySerializer &other) = delete;
 };
 
 #endif // BINARYSERIALIZER_H

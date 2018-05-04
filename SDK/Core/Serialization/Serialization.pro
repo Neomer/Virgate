@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       -= gui
+QT       += xml
 
 TARGET = Serialization
 TEMPLATE = lib
@@ -27,7 +28,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    BinarySerializer.cpp
+    BinarySerializer.cpp \
+    XmlSerializer.cpp
 
 HEADERS += \
         serialization_global.h \ 
@@ -35,7 +37,8 @@ HEADERS += \
     AbstractJsonSerializable.h \
     AbstractXmlSerializable.h \
     BinarySerializer.h \
-    SerializationException.h
+    SerializationException.h \
+    XmlSerializer.h
 
 unix {
     target.path = /usr/lib
@@ -44,7 +47,5 @@ unix {
 
 
 include(../../../paths.pri)
-
-INCLUDEPATH += $$SDK_DIR
 
 include(../../../modules.pri)

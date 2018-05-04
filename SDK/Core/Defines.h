@@ -15,4 +15,10 @@
                                 name& operator= (name const&) = delete; \
                                 public: static name &Instance() { static name inst; return inst; }
 
+#define STATIC(name)         private: name() = delete; \
+                             ~name() = delete; \
+                             name(name const &) = delete; \
+                             name& operator= (name const&) = delete; \
+
+
 #endif // DEFINES_H

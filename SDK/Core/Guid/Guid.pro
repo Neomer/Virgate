@@ -39,6 +39,4 @@ unix {
 
 include(../../../paths.pri)
 
-INCLUDEPATH += $$SDK_DIR
-
 include(../../../modules.pri)
