@@ -1,15 +1,17 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2018-05-03T16:19:51
+# Project created by QtCreator 2018-05-04T09:25:35
 #
 #-------------------------------------------------
 
 QT       -= gui
 
-TARGET = RandomHelper
+DEPEND_MODULES += SDK.Core.Guid SDK.Core.RandomHelper
+
+TARGET = Services
 TEMPLATE = lib
 
-DEFINES += RANDOMHELPER_LIBRARY
+DEFINES += SERVICES_LIBRARY
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which has been marked as deprecated (the exact warnings
@@ -23,16 +25,19 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-        RandomHelper.cpp
+        IAbstractModule.cpp
 
 HEADERS += \
-        RandomHelper.h \
-        randomhelper_global.h 
+        IAbstractModule.h \
+        services_global.h 
 
 unix {
     target.path = /usr/lib
     INSTALLS += target
 }
 
+include(../../../paths.pri)
+
+INCLUDEPATH += $$SDK_DIR
 
 include(../../../modules.pri)
