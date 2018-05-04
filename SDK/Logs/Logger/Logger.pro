@@ -1,19 +1,15 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2018-05-04T11:09:45
+# Project created by QtCreator 2018-05-04T12:06:35
 #
 #-------------------------------------------------
 
 QT       -= gui
 
-TARGET = DatabaseService
+TARGET = Logger
 TEMPLATE = lib
 
-DEPEND_MODULES += SDK.Core.Helpers \
-                  SDK.Core.Guid \
-                  SDK.Core.Services
-
-DEFINES += DATABASESERVICE_LIBRARY
+DEFINES += LOGGER_LIBRARY
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which has been marked as deprecated (the exact warnings
@@ -27,11 +23,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-        DatabaseService.cpp
+        AbstractLogger.cpp \
+    ConsoleLogger.cpp
 
 HEADERS += \
-        DatabaseService.h \
-        databaseservice_global.h 
+        AbstractLogger.h \
+        logger_global.h \ 
+    ../../Core/Defines.h \
+    ConsoleLogger.h
 
 unix {
     target.path = /usr/lib
@@ -40,8 +39,8 @@ unix {
 
 
 
-include(../../paths.pri)
+include(../../../paths.pri)
 
 INCLUDEPATH += $$SDK_DIR
 
-include(../../modules.pri)
+include(../../../modules.pri)

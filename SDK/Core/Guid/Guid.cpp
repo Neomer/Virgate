@@ -1,7 +1,7 @@
 #include "Guid.h"
 #include <QRegExp>
 #include <QStringList>
-#include <Core/RandomHelper/RandomHelper.h>
+#include <Core/Helpers/RandomHelper.h>
 
 Guid::Guid(const Guid &other)
 {

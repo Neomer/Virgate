@@ -7,7 +7,7 @@
 QT       -= gui
 
 MODULE = SDK.Core.Guid
-DEPEND_MODULES += SDK.Core.RandomHelper
+DEPEND_MODULES += SDK.Core.Helpers
 
 TARGET = Guid
 TEMPLATE = lib

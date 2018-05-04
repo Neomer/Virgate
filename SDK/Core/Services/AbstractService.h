@@ -7,13 +7,23 @@
 #include <Core/Guid/Guid.h>
 #include "AbstractModule.h"
 
-class AbstractService : private QThread
+class SERVICESSHARED_EXPORT AbstractService : public QThread
 {
     Q_OBJECT
 
 public:
     AbstractService();
 
+    ///
+    /// \brief Load Выполняет всю первоначальную загрузку сервиса
+    ///
+    virtual void Load() = 0;
+    ///
+    /// \brief Unload Выполняет все необходимые операции при завершении сервиса
+    ///
+    virtual void Unload() = 0;
+
+    void start();
     void registerModule(AbstractModule *module);
 
     // QThread interface

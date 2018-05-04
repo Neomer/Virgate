@@ -41,8 +41,3 @@ RandomHelper::RandomHelper()
 {
     std::srand(QDateTime::currentDateTime().toMSecsSinceEpoch());
 }
-
-RandomHelper::~RandomHelper()
-{
-
-}

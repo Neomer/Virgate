@@ -2,6 +2,7 @@
 #define RANDOMHELPER_H
 
 #include "randomhelper_global.h"
+#include <Core/Defines.h>
 #include <math.h>
 
 ///
@@ -9,6 +10,8 @@
 ///
 class RANDOMHELPERSHARED_EXPORT RandomHelper
 {
+    SINGLETON(RandomHelper)
+
 public:
     ///
     /// \brief Instance вовзращает экземпляр класса
@@ -44,12 +47,7 @@ public:
     ///
     bool nextBool();
 
-private:
-    RandomHelper();
-    ~RandomHelper();
 
-    RandomHelper(RandomHelper const&) = delete;
-    RandomHelper& operator= (RandomHelper const&) = delete;
 };
 
 #endif // RANDOMHELPER_H

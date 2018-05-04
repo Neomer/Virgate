@@ -6,7 +6,7 @@
 
 QT       -= gui
 
-DEPEND_MODULES += SDK.Core.Guid SDK.Core.RandomHelper
+DEPEND_MODULES += SDK.Core.Guid SDK.Core.Helpers
 
 TARGET = Services
 TEMPLATE = lib

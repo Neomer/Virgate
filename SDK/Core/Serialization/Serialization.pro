@@ -1,19 +1,18 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2018-05-04T11:09:45
+# Project created by QtCreator 2018-05-04T11:48:17
 #
 #-------------------------------------------------
 
 QT       -= gui
 
-TARGET = DatabaseService
+TARGET = Serialization
 TEMPLATE = lib
 
-DEPEND_MODULES += SDK.Core.Helpers \
-                  SDK.Core.Guid \
-                  SDK.Core.Services
+DEPEND_MODULES += SDK.Core.Guid
 
-DEFINES += DATABASESERVICE_LIBRARY
+
+DEFINES += SERIALIZATION_LIBRARY
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which has been marked as deprecated (the exact warnings
@@ -27,11 +26,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-        DatabaseService.cpp
+    BinarySerializer.cpp
 
 HEADERS += \
-        DatabaseService.h \
-        databaseservice_global.h 
+        serialization_global.h \ 
+    AbstractBinarySerializable.h \
+    AbstractJsonSerializable.h \
+    AbstractXmlSerializable.h \
+    BinarySerializer.h \
+    SerializationException.h
 
 unix {
     target.path = /usr/lib
@@ -39,9 +42,8 @@ unix {
 }
 
 
-
-include(../../paths.pri)
+include(../../../paths.pri)
 
 INCLUDEPATH += $$SDK_DIR
 
-include(../../modules.pri)
+include(../../../modules.pri)

@@ -1,6 +1,18 @@
 #include "DatabaseService.h"
 
-
-DatabaseService::DatabaseService()
+DatabaseService::DatabaseService() :
+    AbstractService()
 {
+
+}
+
+
+void DatabaseService::Load()
+{
+
+}
+
+void DatabaseService::Unload()
+{
+
 }

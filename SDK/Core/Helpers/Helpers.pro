@@ -6,7 +6,7 @@
 
 QT       -= gui
 
-TARGET = RandomHelper
+TARGET = Helpers
 TEMPLATE = lib
 
 DEFINES += RANDOMHELPER_LIBRARY
@@ -27,12 +27,16 @@ SOURCES += \
 
 HEADERS += \
         RandomHelper.h \
-        randomhelper_global.h 
+        randomhelper_global.h \ 
+    ../Defines.h
 
 unix {
     target.path = /usr/lib
     INSTALLS += target
 }
 
+include(../../../paths.pri)
+
+INCLUDEPATH += $$SDK_DIR
 
 include(../../../modules.pri)
