@@ -34,9 +34,12 @@ public:
     ///
     static Guid parse(QString guid, bool *ok = nullptr);
 
+    Guid operator =(const Guid &other);
+    Guid operator =(QString data);
+    Guid operator =(const char *data);
+
     bool operator !=(const Guid &other);
     bool operator ==(const Guid &other);
-    Guid operator =(const Guid &other);
     bool operator <(const Guid &other);
     bool operator >(const Guid &other);
 

@@ -67,6 +67,28 @@ Guid Guid::operator =(const Guid &other)
     return *this;
 }
 
+Guid Guid::operator =(QString data)
+{
+    bool ok = true;
+    Guid ret = Guid::parse(data, &ok);
+    if (!ok)
+    {
+        throw std::runtime_error("Неверный формат Guid!");
+    }
+    return ret;
+}
+
+Guid Guid::operator =(const char *data)
+{
+    bool ok = true;
+    Guid ret = Guid::parse(QString(data), &ok);
+    if (!ok)
+    {
+        throw std::runtime_error("Неверный формат Guid!");
+    }
+    return ret;
+}
+
 bool Guid::operator <(const Guid &other)
 {
     return memcmp(&(other._data), &_data, sizeof(GuidStructure)) > 0;
