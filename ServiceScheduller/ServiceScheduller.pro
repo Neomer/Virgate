@@ -4,11 +4,14 @@ CONFIG += c++11 console
 CONFIG -= app_bundle
 
 
-DEPEND_MODULES += SDK.Core.Exceptions \
-                  SDK.Core.Services \
-                  SDK.Core.Serialization \
-                  SDK.Core.Helpers \
-                  Services.AuthenticationService \
+DEPEND_MODULES += \
+        SDK.Core.Guid \
+        SDK.Core.Exceptions \
+        SDK.Core.Services \
+        SDK.Core.Serialization \
+        SDK.Core.Helpers \
+        Services.AuthenticationService \
+        SDK.Models \
 
 include(../paths.pri)
 include(../modules.pri)

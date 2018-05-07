@@ -1,6 +1,7 @@
 #include "AbstractEntity.h"
 
 
-AbstractEntity::AbstractEntity()
+AbstractEntity::AbstractEntity() :
+    QObject()
 {
 }

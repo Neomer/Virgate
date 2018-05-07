@@ -5,11 +5,13 @@
 #include <Core/Exceptions/DataParsingException.h>
 #include <Core/Helpers/LogHelper.h>
 
+#include <Models/AbstractEntityFactory.h>
+
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
+    /*
     auto logger = LogHelper::Instance().getCurrent();
-
     try
     {
         AbstractService *svc = new AuthenticationService();
@@ -32,6 +34,9 @@ int main(int argc, char *argv[])
     {
         logger->writeLine(ex.what());
     }
+    */
+    auto factory = new AbstractEntityFactory();
+    auto entity = factory->CreateEntity(Guid::newGuid());
 
     return a.exec();
 }
