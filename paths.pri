@@ -1,5 +1,10 @@
 ROOT_DIR = $$PWD
 SDK_DIR = $$PWD/SDK
+BUILD_DIR = $$PWD/bin
+win32 {
+    BUILD_DIR = $$replace(BUILD_DIR, /, \\)
+}
+
 
 CONFIG(debug, debug|release) {
 #    DESTDIR = $$ROOT_DIR/build/debug
