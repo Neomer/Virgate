@@ -31,13 +31,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     AbstractModule.cpp \
     AbstractService.cpp \
-    AbstractConfiguration.cpp
+    AbstractConfiguration.cpp \
+    ModuleRuntimeBaseException.cpp
 
 HEADERS += \
         services_global.h \ 
     AbstractModule.h \
     AbstractService.h \
-    AbstractConfiguration.h
+    AbstractConfiguration.h \
+    ModuleRuntimeBaseException.h
 
 unix {
     target.path = /usr/lib

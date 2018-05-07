@@ -1,12 +1,14 @@
 #include <QFile>
 #include <QJsonDocument>
 
+#include <Core/Helpers/LogHelper.h>
+
 #include <Core/Exceptions/DataFormatException.h>
 #include <Core/Exceptions/DataParsingException.h>
 #include <Core/Exceptions/ResourceAccessException.h>
 
 #include "AbstractService.h"
-
+#include "ModuleRuntimeBaseException.h"
 
 AbstractService::AbstractService() :
     _configuration(nullptr)
@@ -62,11 +64,20 @@ void AbstractService::loadConfiguration(QString configurationFileName)
 
 void AbstractService::run()
 {
+    auto logger = LogHelper::Instance().getCurrent();
+
     forever
     {
         foreach (auto m, _modules)
         {
-            m->exec();
+            try
+            {
+                m->exec();
+            }
+            catch (ModuleRuntimeBaseException &ex)
+            {
+                logger->writeLine(QString("Module runtime exception! Module: %1 %2").arg(ex.getModule()->moduleId().toString(), ex.getMessage()));
+            }
         }
     }
 }

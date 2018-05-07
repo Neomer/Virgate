@@ -17,6 +17,7 @@ int main(int argc, char *argv[])
         {
             svc->loadConfiguration("configuration.json");
             svc->Load();
+            svc->start();
         }
         catch (DataParsingException &ex)
         {
