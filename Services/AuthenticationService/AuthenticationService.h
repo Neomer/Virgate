@@ -3,6 +3,7 @@
 
 #include "authenticationservice_global.h"
 #include <Core/Services/AbstractService.h>
+#include "AuthenticationServiceConfiguration.h"
 
 class AUTHENTICATIONSERVICESHARED_EXPORT AuthenticationService : public AbstractService
 {

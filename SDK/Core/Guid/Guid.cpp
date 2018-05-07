@@ -99,7 +99,7 @@ bool Guid::operator >(const Guid &other)
     return memcmp(&(other._data), &_data, sizeof(GuidStructure)) < 0;
 }
 
-QString Guid::toString()
+QString Guid::toString() const
 {
     return QString("%1-%2-%3-%4-%5%6").arg(
                 QString::number(_data.Data1, 16).rightJustified(8, '0'),

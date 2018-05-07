@@ -6,7 +6,11 @@
 
 QT       -= gui
 
-DEPEND_MODULES += SDK.Core.Guid SDK.Core.Helpers
+DEPEND_MODULES += \
+        SDK.Core.Exceptions \
+        SDK.Core.Guid \
+        SDK.Core.Helpers \
+        SDK.Core.Serialization \
 
 TARGET = Services
 TEMPLATE = lib
@@ -26,12 +30,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     AbstractModule.cpp \
-    AbstractService.cpp
+    AbstractService.cpp \
+    AbstractConfiguration.cpp
 
 HEADERS += \
         services_global.h \ 
     AbstractModule.h \
-    AbstractService.h
+    AbstractService.h \
+    AbstractConfiguration.h
 
 unix {
     target.path = /usr/lib

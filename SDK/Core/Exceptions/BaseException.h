@@ -12,6 +12,8 @@ public:
     BaseException(QString message);
     BaseException(const char *message);
 
+    QString getMessage() { return _message; }
+
 private:
     QString _message;
 

@@ -21,3 +21,4 @@ void DatabaseConfiguration::fromJson(const QJsonObject &object)
     setUsername(object["username"].toString());
     setPassword(object["password"].toString());
 }
+

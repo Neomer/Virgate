@@ -37,8 +37,6 @@ unix {
     INSTALLS += target
 }
 
-
-
 include(../../../paths.pri)
 
 include(../../../modules.pri)

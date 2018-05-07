@@ -25,13 +25,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         BaseException.cpp \
     ResourceAccessException.cpp \
-    DataParsingException.cpp
+    DataParsingException.cpp \
+    DataFormatException.cpp
 
 HEADERS += \
         BaseException.h \
         exceptions_global.h \ 
     ResourceAccessException.h \
-    DataParsingException.h
+    DataParsingException.h \
+    DataFormatException.h
 
 unix {
     target.path = /usr/lib

@@ -1,6 +1,7 @@
 #include "DatabaseServiceConfiguration.h"
 
-DatabaseServiceConfiguration::DatabaseServiceConfiguration()
+DatabaseServiceConfiguration::DatabaseServiceConfiguration() :
+    AbstractConfiguration()
 {
 
 }

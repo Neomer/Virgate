@@ -6,6 +6,7 @@
 
 #include <Core/Guid/Guid.h>
 #include "AbstractModule.h"
+#include "AbstractConfiguration.h"
 
 ///
 /// \brief The AbstractService class. <i>Абстрактный класс</i>. Должен быть реализован всеми сервисами. Предоставляет базовые функции для
@@ -55,12 +56,19 @@ public:
     ///
     void registerModule(AbstractModule *module, const Guid &moduleId, InsertPositionType position = InsertPositionType::enBefore);
 
+    void loadConfiguration(QString configurationFileName);
+
+    AbstractConfiguration *getConfiguration() { return _configuration; }
+
     // QThread interface
 protected:
     void run() override;
 
 private:
     QList<AbstractModule *> _modules;
+
+protected:
+    AbstractConfiguration *_configuration;
 };
 
 #endif // ABSTRACTSERVICE_H

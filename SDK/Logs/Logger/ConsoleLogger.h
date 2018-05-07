@@ -13,8 +13,8 @@ public:
 public:
     void load() override;
     void unload() override;
-    void writeLine(QString value) override;
-    void write(QString value) override;
+    void writeLine(const QString value) override;
+    void write(const QString value) override;
     void writeLine(const char *value) override;
     void write(const char *value) override;
 };

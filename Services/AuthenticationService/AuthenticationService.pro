@@ -13,7 +13,7 @@ DEPEND_MODULES += SDK.Core.Exceptions \
                   SDK.Core.Services \
                   SDK.Core.Serialization \
                   SDK.Core.Helpers \
-                  SDK.Core.Guid \
+                  SDK.Core.Guid
 
 DEFINES += AUTHENTICATIONSERVICE_LIBRARY
 

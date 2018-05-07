@@ -1,13 +1,15 @@
 TEMPLATE = subdirs
 
+CONFIG += ordered
+
 SUBDIRS += \
+    SDK/Core/Exceptions \
     SDK/Logs/Logger \
-    SDK/Core/Serialization \
     SDK/Core/Helpers \
     SDK/Core/Guid \
+    SDK/Core/Serialization \
     SDK/Core/Services \
     Services/DatabaseService \
-    SDK/Core/Exceptions \
     Services/AuthenticationService \
     ServiceScheduller
 

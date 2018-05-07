@@ -2,10 +2,10 @@
 #define DATABASESERVICECONFIGURATION_H
 
 #include <Core/Defines.h>
-#include <Core/Serialization/AbstractJsonSerializable.h>
+#include <Core/Services/AbstractConfiguration.h>
 #include "DatabaseConfiguration.h"
 
-class DatabaseServiceConfiguration : public AbstractJsonSerializable
+class DatabaseServiceConfiguration : public AbstractConfiguration
 {
 public:
     DatabaseServiceConfiguration();
@@ -16,6 +16,10 @@ public:
 public:
     void toJson(QJsonObject &object) override;
     void fromJson(const QJsonObject &object) override;
+
+    // AbstractConfiguration interface
+public:
+    QString getConfigurationSection() override { return "DatabaseService"; }
 };
 
 #endif // DATABASESERVICECONFIGURATION_H

@@ -10,7 +10,7 @@ class DATABASESERVICESHARED_EXPORT DatabaseService : public AbstractService
     Q_OBJECT
 
 public:
-    DatabaseService(QString configFilename);
+    DatabaseService();
 
     // AbstractService interface
 public:
@@ -19,8 +19,6 @@ public:
     const Guid &ModuleId() override { return _moduleId; }
 
 private:
-    DatabaseServiceConfiguration _config;
-    QString _configFilename;
     Guid _moduleId;
 };
 

@@ -17,12 +17,12 @@ void ConsoleLogger::unload()
 
 }
 
-void ConsoleLogger::writeLine(QString value)
+void ConsoleLogger::writeLine(const QString value)
 {
     printf("%s\n", value.toStdString().c_str());
 }
 
-void ConsoleLogger::write(QString value)
+void ConsoleLogger::write(const QString value)
 {
     printf("%s", value.toStdString().c_str());
 }

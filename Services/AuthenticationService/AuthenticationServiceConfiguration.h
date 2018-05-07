@@ -2,9 +2,9 @@
 #define AUTHENTICATIONSERVICECONFIGURATION_H
 
 #include <Core/Defines.h>
-#include <Core/Serialization/AbstractJsonSerializable.h>
+#include <Core/Services/AbstractConfiguration.h>
 
-class AuthenticationServiceConfiguration : public AbstractJsonSerializable
+class AuthenticationServiceConfiguration : public AbstractConfiguration
 {
 public:
     AuthenticationServiceConfiguration();
@@ -15,6 +15,10 @@ public:
 public:
     void toJson(QJsonObject &object) override;
     void fromJson(const QJsonObject &object) override;
+
+    // AbstractConfiguration interface
+public:
+    QString getConfigurationSection() override { return "AuthenticationService"; }
 };
 
 #endif // AUTHENTICATIONSERVICECONFIGURATION_H

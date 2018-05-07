@@ -43,7 +43,7 @@ public:
     bool operator <(const Guid &other);
     bool operator >(const Guid &other);
 
-    QString toString();
+    QString toString() const;
 
 
 private:
