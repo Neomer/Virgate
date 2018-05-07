@@ -18,6 +18,7 @@ public:
     void Unload() override;
     const Guid &ModuleId() override { return _moduleId; }
 
+
 private:
     Guid _moduleId;
 };

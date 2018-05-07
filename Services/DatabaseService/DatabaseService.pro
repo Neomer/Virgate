@@ -10,11 +10,14 @@ QT       += xml
 TARGET = DatabaseService
 TEMPLATE = lib
 
-DEPEND_MODULES += SDK.Core.Exceptions \
-                  SDK.Core.Services \
-                  SDK.Core.Serialization \
-                  SDK.Core.Helpers \
-                  SDK.Core.Guid \
+DEPEND_MODULES += \
+        SDK.Core.Exceptions \
+        SDK.Core.Services \
+        SDK.Core.Serialization \
+        SDK.Core.Helpers \
+        SDK.Core.Guid \
+        SDK.Models
+
 
 
 DEFINES += DATABASESERVICE_LIBRARY

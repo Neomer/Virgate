@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2018-05-04T09:25:35
+# Project created by QtCreator 2018-05-07T15:06:15
 #
 #-------------------------------------------------
 
@@ -9,13 +9,12 @@ QT       -= gui
 DEPEND_MODULES += \
         SDK.Core.Exceptions \
         SDK.Core.Guid \
-        SDK.Core.Helpers \
-        SDK.Core.Serialization \
 
-TARGET = Services
+
+TARGET = Models
 TEMPLATE = lib
 
-DEFINES += SERVICES_LIBRARY
+DEFINES += MODELS_LIBRARY
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which has been marked as deprecated (the exact warnings
@@ -29,22 +28,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    AbstractModule.cpp \
-    AbstractService.cpp \
-    AbstractConfiguration.cpp \
-    ModuleRuntimeBaseException.cpp
+        AbstractEntity.cpp
 
 HEADERS += \
-        services_global.h \ 
-    AbstractModule.h \
-    AbstractService.h \
-    AbstractConfiguration.h \
-    ModuleRuntimeBaseException.h
+        AbstractEntity.h \
+        models_global.h 
 
 unix {
     target.path = /usr/lib
     INSTALLS += target
 }
 
-include(../../../paths.pri)
-include(../../../modules.pri)
+include(../../paths.pri)
+include(../../modules.pri)

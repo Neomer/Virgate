@@ -11,5 +11,6 @@ SUBDIRS += \
     SDK/Core/Services \
     Services/DatabaseService \
     Services/AuthenticationService \
-    ServiceScheduller
+    ServiceScheduller \
+    SDK/Models
 
