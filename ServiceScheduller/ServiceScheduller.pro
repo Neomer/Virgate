@@ -8,6 +8,7 @@ DEPEND_MODULES += SDK.Core.Exceptions \
                   SDK.Core.Services \
                   SDK.Core.Serialization \
                   SDK.Core.Helpers \
+                  Services.AuthenticationService \
 
 include(../paths.pri)
 include(../modules.pri)
