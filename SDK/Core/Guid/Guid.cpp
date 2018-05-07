@@ -26,7 +26,7 @@ Guid Guid::emptyGuid()
     return ret;
 }
 
-Guid Guid::parse(QString guid, bool *ok)
+Guid Guid::Parse(QString guid, bool *ok)
 {
     QRegExp guidValidator("\\{?[\\da-fA-F]{8}\\-[\\da-fA-F]{4}\\-[\\da-fA-F]{4}\\-[\\da-fA-F]{4}\\-[\\da-fA-F]{12}\\}?");
     if (!guidValidator.exactMatch(guid))
@@ -70,7 +70,7 @@ Guid Guid::operator =(const Guid &other)
 Guid Guid::operator =(QString data)
 {
     bool ok = true;
-    Guid ret = Guid::parse(data, &ok);
+    Guid ret = Guid::Parse(data, &ok);
     if (!ok)
     {
         throw std::runtime_error("Неверный формат Guid!");
@@ -81,7 +81,7 @@ Guid Guid::operator =(QString data)
 Guid Guid::operator =(const char *data)
 {
     bool ok = true;
-    Guid ret = Guid::parse(QString(data), &ok);
+    Guid ret = Guid::Parse(QString(data), &ok);
     if (!ok)
     {
         throw std::runtime_error("Неверный формат Guid!");

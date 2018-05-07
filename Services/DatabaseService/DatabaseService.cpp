@@ -10,7 +10,8 @@
 
 DatabaseService::DatabaseService(QString configFilename) :
     AbstractService(),
-    _configFilename(configFilename)
+    _configFilename(configFilename),
+  _moduleId(Guid::Parse("6ab87c0b-7c8c-49e9-8ed9-fae2c481bd34"))
 {
 
 }

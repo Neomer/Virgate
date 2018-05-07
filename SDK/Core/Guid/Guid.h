@@ -32,7 +32,7 @@ public:
     /// \param ok результат обработки
     /// \return
     ///
-    static Guid parse(QString guid, bool *ok = nullptr);
+    static Guid Parse(QString guid, bool *ok = nullptr);
 
     Guid operator =(const Guid &other);
     Guid operator =(QString data);

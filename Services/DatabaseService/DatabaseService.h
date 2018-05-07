@@ -16,10 +16,12 @@ public:
 public:
     void Load() override;
     void Unload() override;
+    const Guid &ModuleId() override { return _moduleId; }
 
 private:
-    QString _configFilename;
     DatabaseServiceConfiguration _config;
+    QString _configFilename;
+    Guid _moduleId;
 };
 
 #endif // DATABASESERVICE_H

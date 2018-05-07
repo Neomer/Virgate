@@ -12,7 +12,12 @@ void AbstractService::start()
 
 void AbstractService::registerModule(AbstractModule *module)
 {
-    _modules << module;
+    _modules.push_back(module);
+}
+
+void AbstractService::registerModule(int before, AbstractModule *module)
+{
+    _modules.insert(before, module);
 }
 
 
