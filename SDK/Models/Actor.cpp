@@ -6,7 +6,8 @@ Actor::Actor() :
 
 }
 
-Actor::Actor(const Actor &other)
+Actor::Actor(const Actor &other) :
+    AbstractEntity(other)
 {
 
 }

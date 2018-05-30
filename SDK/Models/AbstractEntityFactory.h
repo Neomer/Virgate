@@ -11,7 +11,15 @@ class MODELSSHARED_EXPORT AbstractEntityFactory
     SINGLETON(AbstractEntityFactory)
 
 public:
-    std::shared_ptr<AbstractEntity> CreateEntity(const char *typeName);
+    template <typename T> T* CreateEntity(const char *typeName)
+    {
+        auto type = QMetaType::type(typeName);
+        if (type == QMetaType::UnknownType)
+        {
+            return nullptr;
+        }
+        return (T *)QMetaType::create(type);
+    }
 };
 
 #endif // ABSTRACTENTITYFACTORY_H

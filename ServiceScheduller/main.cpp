@@ -9,8 +9,6 @@
 #include <Models/AbstractEntityFactory.h>
 #include <Models/Actor.h>
 
-#include "Test.h"
-
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
@@ -39,10 +37,13 @@ int main(int argc, char *argv[])
         logger->writeLine(ex.what());
     }
     */
-    //auto factory = new AbstractEntityFactory();
-    //auto entity = factory->CreateEntity(Guid::newGuid());
+    qRegisterMetaType<Actor>("Actor");
 
-    Actor actor;
+    auto actor = AbstractEntityFactory::Instance().CreateEntity<Actor>("Actor");
+    if (actor != nullptr)
+    {
+        qDebug() << actor->getEntityTypeId().toString();
+    }
 
     return a.exec();
 }

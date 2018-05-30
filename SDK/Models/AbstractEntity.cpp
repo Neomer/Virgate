@@ -4,6 +4,13 @@
 AbstractEntity::AbstractEntity() :
     QObject()
 {
+
+}
+
+AbstractEntity::AbstractEntity(const AbstractEntity &other) :
+    QObject()
+{
+    _Id = other._Id;
 }
 
 void AbstractEntity::toJson(QJsonObject &object)

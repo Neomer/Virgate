@@ -2,6 +2,7 @@
 #include <QRegExp>
 #include <QStringList>
 #include <Core/Helpers/RandomHelper.h>
+#include <QDebug>
 
 Guid::Guid(const Guid &other)
 {
@@ -31,21 +32,25 @@ Guid Guid::Parse(QString guid, bool *ok)
     QRegExp guidValidator("\\{?[\\da-fA-F]{8}\\-[\\da-fA-F]{4}\\-[\\da-fA-F]{4}\\-[\\da-fA-F]{4}\\-[\\da-fA-F]{12}\\}?");
     if (!guidValidator.exactMatch(guid))
     {
-        *ok = false;
+        if (ok != nullptr)
+            *ok = false;
         return Guid::emptyGuid();
     }
     if (guid.startsWith("{")) guid = guid.mid(1);
     if (guid.endsWith("}")) guid = guid.left(-1);
     QStringList r = guid.split('-');
+    bool bOk = true;
     Guid ret;
-    ret._data.Data1 = QString(r.at(0)).toUInt(ok, 16);
-    ret._data.Data2 = QString(r.at(1)).toUInt(ok, 16);
-    ret._data.Data3 = QString(r.at(2)).toUInt(ok, 16);
-    ret._data.Data4 = QString(r.at(3)).toUInt(ok, 16) << 16;
-    ret._data.Data4 |= QString(r.at(4)).left(4).toUInt(ok, 16);
-    ret._data.Data5 = QString(r.at(4)).right(8).toUInt(ok, 16);
-    if (!*ok)
+    ret._data.Data1 = QString(r.at(0)).toUInt(&bOk, 16);
+    ret._data.Data2 = QString(r.at(1)).toUInt(&bOk, 16);
+    ret._data.Data3 = QString(r.at(2)).toUInt(&bOk, 16);
+    ret._data.Data4 = QString(r.at(3)).toUInt(&bOk, 16) << 16;
+    ret._data.Data4 |= QString(r.at(4)).left(4).toUInt(&bOk, 16);
+    ret._data.Data5 = QString(r.at(4)).right(8).toUInt(&bOk, 16);
+    if (!bOk)
     {
+        if (ok != nullptr)
+            *ok = false;
         return Guid::emptyGuid();
     }
     return ret;

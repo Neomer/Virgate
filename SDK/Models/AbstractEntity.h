@@ -9,12 +9,15 @@
 #include <Core/Serialization/AbstractJsonSerializable.h>
 #include <Core/Serialization/SerializationException.h>
 
-class MODELSSHARED_EXPORT AbstractEntity : public QObject, public AbstractJsonSerializable
+class MODELSSHARED_EXPORT AbstractEntity :
+        public QObject,
+        public AbstractJsonSerializable
 {
     Q_OBJECT
 
 public:
     AbstractEntity();
+    AbstractEntity(const AbstractEntity &other);
 
     PROP(Guid, Id)
 

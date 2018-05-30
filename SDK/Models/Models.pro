@@ -31,13 +31,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         AbstractEntity.cpp \
     Actor.cpp \
-    AbstractEntityFactory.cpp
+    AbstractEntityFactory.cpp \
+    AbstractItem.cpp
 
 HEADERS += \
         AbstractEntity.h \
         models_global.h \ 
     Actor.h \
-    AbstractEntityFactory.h
+    AbstractEntityFactory.h \
+    AbstractItem.h
 
 unix {
     target.path = /usr/lib
