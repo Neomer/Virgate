@@ -38,7 +38,8 @@ SOURCES += \
     DatabaseServiceConfiguration.cpp \
     DatabaseConfiguration.cpp \
     AbstractDatabaseConnection.cpp \
-    AbstractDatabaseQuery.cpp
+    AbstractDatabaseQuery.cpp \
+    postgresql/PostgresQuery.cpp
 
 HEADERS += \
         DatabaseService.h \
@@ -46,7 +47,8 @@ HEADERS += \
     DatabaseServiceConfiguration.h \
     DatabaseConfiguration.h \
     AbstractDatabaseConnection.h \
-    AbstractDatabaseQuery.h
+    AbstractDatabaseQuery.h \
+    postgresql/PostgresQuery.h
 
 unix {
     target.path = /usr/lib
@@ -55,3 +57,6 @@ unix {
 
 include(../../paths.pri)
 include(../../modules.pri)
+
+INCLUDEPATH += "C:/Program Files (x86)/PostgreSQL/10/include"
+LIBS += -L"C:/Program Files (x86)/PostgreSQL/10/lib" -lpq

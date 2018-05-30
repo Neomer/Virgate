@@ -8,7 +8,7 @@
 ///
 /// \brief The AbstractDatabaseQuery class provides access to database's resultset. Used by AbstractDatabaseConnection's for represent execution result.
 ///
-class DATABASESERVICESHARED_EXPORT AbstractDatabaseQuery
+class AbstractDatabaseQuery
 {
 public:
     ///
