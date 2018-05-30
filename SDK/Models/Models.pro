@@ -39,7 +39,8 @@ HEADERS += \
         models_global.h \ 
     Actor.h \
     AbstractEntityFactory.h \
-    AbstractItem.h
+    AbstractItem.h \
+    IDatabaseStored.h
 
 unix {
     target.path = /usr/lib

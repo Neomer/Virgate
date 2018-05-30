@@ -4,6 +4,7 @@
 #include <QObject>
 
 #include "models_global.h"
+#include "IDatabaseStored.h"
 #include <Core/Defines.h>
 #include <Core/Guid/Guid.h>
 #include <Core/Serialization/AbstractJsonSerializable.h>
@@ -11,7 +12,8 @@
 
 class MODELSSHARED_EXPORT AbstractEntity :
         public QObject,
-        public AbstractJsonSerializable
+        public AbstractJsonSerializable,
+        public IDatabaseStored
 {
     Q_OBJECT
 
@@ -27,6 +29,10 @@ public:
 public:
     virtual void toJson(QJsonObject &object) override;
     virtual void fromJson(const QJsonObject &object) override;
+
+    // IDatabaseStored interface
+public:
+    QString getTableName() override { return "Actors"; }
 };
 
 #endif // ABSTRACTENTITY_H

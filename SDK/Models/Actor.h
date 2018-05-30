@@ -14,6 +14,7 @@ public:
     // AbstractEntity interface
 public:
     Guid getEntityTypeId() override { return Guid::Parse("a378bd10-ed5a-48e1-b888-30f944228c94"); }
+    QString getTableName() override { return "Actors"; }
 
     // AbstractJsonSerializable interface
 public:
