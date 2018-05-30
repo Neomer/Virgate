@@ -9,6 +9,7 @@ QT       -= gui
 DEPEND_MODULES += \
         SDK.Core.Exceptions \
         SDK.Core.Guid \
+        SDK.Core.Serialization
 
 
 TARGET = Models

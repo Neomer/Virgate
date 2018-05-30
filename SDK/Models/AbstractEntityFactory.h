@@ -8,9 +8,10 @@
 
 class MODELSSHARED_EXPORT AbstractEntityFactory
 {
+    SINGLETON(AbstractEntityFactory)
+
 public:
-    AbstractEntityFactory();
-    std::shared_ptr<AbstractEntity> CreateEntity(Guid typeId);
+    std::shared_ptr<AbstractEntity> CreateEntity(const char *typeName);
 };
 
 #endif // ABSTRACTENTITYFACTORY_H

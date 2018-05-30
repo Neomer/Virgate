@@ -1,3 +1,4 @@
+#include <QDebug>
 #include <QCoreApplication>
 #include <Core/Services/AbstractService.h>
 #include "../Services/AuthenticationService/AuthenticationService.h"
@@ -6,6 +7,9 @@
 #include <Core/Helpers/LogHelper.h>
 
 #include <Models/AbstractEntityFactory.h>
+#include <Models/Actor.h>
+
+#include "Test.h"
 
 int main(int argc, char *argv[])
 {
@@ -35,8 +39,10 @@ int main(int argc, char *argv[])
         logger->writeLine(ex.what());
     }
     */
-    auto factory = new AbstractEntityFactory();
-    auto entity = factory->CreateEntity(Guid::newGuid());
+    //auto factory = new AbstractEntityFactory();
+    //auto entity = factory->CreateEntity(Guid::newGuid());
+
+    Actor actor;
 
     return a.exec();
 }

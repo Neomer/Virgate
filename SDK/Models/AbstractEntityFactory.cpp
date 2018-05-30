@@ -8,13 +8,14 @@ AbstractEntityFactory::AbstractEntityFactory()
 
 }
 
-std::shared_ptr<AbstractEntity> AbstractEntityFactory::CreateEntity(Guid typeId)
+std::shared_ptr<AbstractEntity> AbstractEntityFactory::CreateEntity(const char *typeName)
 {
-    auto type = QMetaType::type("Actor");
+    auto type = QMetaType::type(typeName);
     qDebug() << "Type:" << type;
-    if (type != QMetaType::UnknownType)
+    if (type == QMetaType::UnknownType)
     {
-        auto instance = QMetaType::create(type);
-        qDebug() << "Instance:" << instance;
+        return nullptr;
     }
+    auto instance = QMetaType::create(type);
+    return std::shared_ptr<AbstractEntity>(static_cast<AbstractEntity *>(instance));
 }

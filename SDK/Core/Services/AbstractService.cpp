@@ -56,9 +56,9 @@ void AbstractService::loadConfiguration(QString configurationFileName)
     }
     if (!json.isObject() || !json.object().contains(_configuration->getConfigurationSection()))
     {
-        throw DataFormatException(QString("В файле конфигурации не обнаружены настройки для сервиса аутентификации!"));
+        throw DataFormatException(QString("В файле конфигурации не обнаружены настройки для сервиса!"));
     }
-    _configuration->fromJson(json.object()["AuthenticationService"].toObject());
+    _configuration->fromJson(json.object()[_configuration->getConfigurationSection()].toObject());
 }
 
 
