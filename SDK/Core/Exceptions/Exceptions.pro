@@ -26,14 +26,16 @@ SOURCES += \
         BaseException.cpp \
     ResourceAccessException.cpp \
     DataParsingException.cpp \
-    DataFormatException.cpp
+    DataFormatException.cpp \
+    NotImplementedException.cpp
 
 HEADERS += \
         BaseException.h \
         exceptions_global.h \ 
     ResourceAccessException.h \
     DataParsingException.h \
-    DataFormatException.h
+    DataFormatException.h \
+    NotImplementedException.h
 
 unix {
     target.path = /usr/lib

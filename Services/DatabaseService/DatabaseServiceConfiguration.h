@@ -1,11 +1,12 @@
 #ifndef DATABASESERVICECONFIGURATION_H
 #define DATABASESERVICECONFIGURATION_H
 
+#include "databaseservice_global.h"
 #include <Core/Defines.h>
 #include <Core/Services/AbstractConfiguration.h>
 #include "DatabaseConfiguration.h"
 
-class DatabaseServiceConfiguration : public AbstractConfiguration
+class DATABASESERVICESHARED_EXPORT DatabaseServiceConfiguration : public AbstractConfiguration
 {
 public:
     DatabaseServiceConfiguration();

@@ -25,3 +25,13 @@ void DatabaseService::Unload()
 {
 
 }
+
+void DatabaseService::SaveEntityImmediatly(AbstractEntity *entity)
+{
+
+}
+
+void DatabaseService::SaveEntity(AbstractEntity *entity)
+{
+
+}

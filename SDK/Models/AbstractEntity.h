@@ -29,10 +29,6 @@ public:
 public:
     virtual void toJson(QJsonObject &object) override;
     virtual void fromJson(const QJsonObject &object) override;
-
-    // IDatabaseStored interface
-public:
-    QString getTableName() override { return "Actors"; }
 };
 
 #endif // ABSTRACTENTITY_H

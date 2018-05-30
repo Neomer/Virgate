@@ -1,10 +1,11 @@
 #ifndef DATABASECONFIGURATION_H
 #define DATABASECONFIGURATION_H
 
+#include "databaseservice_global.h"
 #include <Core/Defines.h>
 #include <Core/Serialization/AbstractJsonSerializable.h>
 
-class DatabaseConfiguration : public AbstractJsonSerializable
+class DATABASESERVICESHARED_EXPORT DatabaseConfiguration : public AbstractJsonSerializable
 {
 public:
     DatabaseConfiguration();

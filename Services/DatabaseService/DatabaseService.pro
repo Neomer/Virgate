@@ -36,13 +36,17 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         DatabaseService.cpp \
     DatabaseServiceConfiguration.cpp \
-    DatabaseConfiguration.cpp
+    DatabaseConfiguration.cpp \
+    AbstractDatabaseConnection.cpp \
+    AbstractDatabaseQuery.cpp
 
 HEADERS += \
         DatabaseService.h \
         databaseservice_global.h \ 
     DatabaseServiceConfiguration.h \
-    DatabaseConfiguration.h
+    DatabaseConfiguration.h \
+    AbstractDatabaseConnection.h \
+    AbstractDatabaseQuery.h
 
 unix {
     target.path = /usr/lib
