@@ -29,3 +29,17 @@ void AbstractEntity::fromJson(const QJsonObject &object)
         throw new SerializationException("Data parsing error!");
     }
 }
+
+
+QStringList AbstractEntity::getTableFields()
+{
+    return QStringList() << "Id" << "EntityType";
+}
+
+QVariant AbstractEntity::getTableFieldValue(QString name)
+{
+    if (name == "Id") return getId().toString();
+    else if (name == "EntityType") return getEntityTypeId().toString();
+
+    throw UnknownFieldException();
+}

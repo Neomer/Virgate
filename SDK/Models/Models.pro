@@ -32,7 +32,8 @@ SOURCES += \
         AbstractEntity.cpp \
     Actor.cpp \
     AbstractEntityFactory.cpp \
-    AbstractItem.cpp
+    AbstractItem.cpp \
+    UnknownFieldException.cpp
 
 HEADERS += \
         AbstractEntity.h \
@@ -40,7 +41,8 @@ HEADERS += \
     Actor.h \
     AbstractEntityFactory.h \
     AbstractItem.h \
-    IDatabaseStored.h
+    IDatabaseStored.h \
+    UnknownFieldException.h
 
 unix {
     target.path = /usr/lib

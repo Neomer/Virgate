@@ -4,6 +4,7 @@
 #include "databaseservice_global.h"
 #include <Core/Services/AbstractService.h>
 #include "DatabaseServiceConfiguration.h"
+#include "AbstractDatabaseConnection.h"
 
 #include <Models/IDatabaseStored.h>
 #include <Models/AbstractEntity.h>
@@ -26,6 +27,7 @@ public:
 
 private:
     Guid _moduleId;
+    AbstractDatabaseConnection *_connection;
 };
 
 #endif // DATABASESERVICE_H

@@ -23,6 +23,8 @@ public:
     // IDatabaseStored interface
 public:
     QString getTableName() override { return "Actors"; }
+    QStringList getTableFields() override;
+    QVariant getTableFieldValue(QString name) override;
 };
 
 Q_DECLARE_METATYPE(Actor)

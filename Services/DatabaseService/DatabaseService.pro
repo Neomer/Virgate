@@ -37,9 +37,8 @@ SOURCES += \
         DatabaseService.cpp \
     DatabaseServiceConfiguration.cpp \
     DatabaseConfiguration.cpp \
-    AbstractDatabaseConnection.cpp \
-    AbstractDatabaseQuery.cpp \
-    postgresql/PostgresQuery.cpp
+    postgresql/PostgresQuery.cpp \
+    postgresql/PostgresConnection.cpp
 
 HEADERS += \
         DatabaseService.h \
@@ -48,7 +47,8 @@ HEADERS += \
     DatabaseConfiguration.h \
     AbstractDatabaseConnection.h \
     AbstractDatabaseQuery.h \
-    postgresql/PostgresQuery.h
+    postgresql/PostgresQuery.h \
+    postgresql/PostgresConnection.h
 
 unix {
     target.path = /usr/lib
