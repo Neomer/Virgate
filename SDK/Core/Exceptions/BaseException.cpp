@@ -22,3 +22,6 @@ QException *BaseException::clone() const
 {
     return new BaseException(*this);
 }
+
+
+

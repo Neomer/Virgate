@@ -9,6 +9,8 @@
 #include <Models/AbstractEntityFactory.h>
 #include <Models/Actor.h>
 
+#include "../Services/DatabaseService/postgresql/PostgresConnection.h"
+
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
@@ -44,6 +46,11 @@ int main(int argc, char *argv[])
     {
         qDebug() << actor->getEntityTypeId().toString();
     }
+
+    PostgresConnection conn;
+    conn.open();
+    conn.exec("select * from actors;");
+    conn.close();
 
     return a.exec();
 }

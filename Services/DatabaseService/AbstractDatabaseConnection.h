@@ -9,8 +9,8 @@
 class DATABASESERVICESHARED_EXPORT AbstractDatabaseConnection
 {
 public:
-    virtual bool open();
-    virtual void close();
+    virtual bool open() = 0;
+    virtual void close() = 0;
     virtual AbstractDatabaseQuery* exec(QString sql) = 0;
 };
 

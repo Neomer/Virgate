@@ -24,6 +24,13 @@ private:
 public:
     void raise() const override;
     QException *clone() const override;
+
+    // exception interface
+public:
+    virtual const char* what() const throw()
+    {
+        return _message.toStdString().c_str();
+    }
 };
 
 #endif // BASEEXCEPTION_H

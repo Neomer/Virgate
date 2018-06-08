@@ -3,7 +3,7 @@
 
 #include "../AbstractDatabaseConnection.h"
 
-class PostgresConnection : public AbstractDatabaseConnection
+class DATABASESERVICESHARED_EXPORT PostgresConnection : public AbstractDatabaseConnection
 {
 public:
     PostgresConnection();

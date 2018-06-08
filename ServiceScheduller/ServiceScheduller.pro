@@ -12,6 +12,7 @@ DEPEND_MODULES += \
         SDK.Core.Helpers \
         Services.AuthenticationService \
         SDK.Models \
+        Services.DatabaseService \
 
 include(../paths.pri)
 include(../modules.pri)
