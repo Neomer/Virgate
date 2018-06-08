@@ -6,6 +6,9 @@
 #include "exceptions_global.h"
 #include <Core/Defines.h>
 
+///
+/// \brief The BaseException exception is a general exception. All other exceptions MUST be implemented from BaseException.
+///
 class EXCEPTIONSSHARED_EXPORT BaseException : public QException
 {
 public:

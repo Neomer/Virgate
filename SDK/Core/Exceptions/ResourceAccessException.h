@@ -3,6 +3,9 @@
 
 #include "BaseException.h"
 
+///
+/// \brief The ResourceAccessException exception will be thrown when no access to any resource, such as files, network service etc
+///
 class EXCEPTIONSSHARED_EXPORT ResourceAccessException : public BaseException
 {
 public:

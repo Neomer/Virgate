@@ -5,6 +5,9 @@
 
 #include "BaseException.h"
 
+///
+/// \brief The DataFormatException exception will be thrown when occure any errors in input or output parameters.
+///
 class EXCEPTIONSSHARED_EXPORT DataFormatException : public BaseException
 {
 public:

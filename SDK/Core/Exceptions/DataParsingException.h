@@ -3,6 +3,9 @@
 
 #include "BaseException.h"
 
+///
+/// \brief The DataParsingException exception will be thrown when occure any errors during data parsing
+///
 class EXCEPTIONSSHARED_EXPORT DataParsingException : public BaseException
 {
 public:
