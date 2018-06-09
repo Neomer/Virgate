@@ -15,6 +15,9 @@ DatabaseService::DatabaseService() :
     _moduleId(Guid::Parse("6ab87c0b-7c8c-49e9-8ed9-fae2c481bd34"))
 {
     _configuration = new DatabaseServiceConfiguration();
+
+    _connection = new PostgresConnection();
+    _connection->setConfiguration(_configuration);
 }
 
 
@@ -30,9 +33,19 @@ void DatabaseService::Unload()
 
 void DatabaseService::SaveEntityImmediatly(AbstractEntity *entity)
 {
+
 }
 
 void DatabaseService::SaveEntity(AbstractEntity *entity)
 {
 
+}
+
+void DatabaseService::Load(Guid id, AbstractEntity *entity)
+{
+    auto result = _connection->exec("select * from " + entity->getTableName() + " where Id='" + id.toString() + "'");
+    if (!result->isValid() || result->isEmpty())
+    {
+        throw DatabaseQueryException("Query isn't valid or resultset is empty");
+    }
 }

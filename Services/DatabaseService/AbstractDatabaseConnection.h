@@ -3,6 +3,7 @@
 
 #include "databaseservice_global.h"
 #include "AbstractDatabaseQuery.h"
+#include <Core/Services/AbstractConfiguration.h>
 
 #include <memory>
 
@@ -12,6 +13,8 @@ public:
     virtual bool open() = 0;
     virtual void close() = 0;
     virtual AbstractDatabaseQuery* exec(QString sql) = 0;
+
+    PROP_PTR(AbstractConfiguration, Configuration)
 };
 
 #endif // ABSTRACTDATABASECONNECTION_H

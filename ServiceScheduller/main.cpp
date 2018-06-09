@@ -2,6 +2,8 @@
 #include <QCoreApplication>
 #include <Core/Services/AbstractService.h>
 #include "../Services/AuthenticationService/AuthenticationService.h"
+#include "../Services/DatabaseService/DatabaseService.h"
+
 #include <Core/Exceptions/ResourceAccessException.h>
 #include <Core/Exceptions/DataParsingException.h>
 #include <Core/Helpers/LogHelper.h>
@@ -9,16 +11,14 @@
 #include <Models/AbstractEntityFactory.h>
 #include <Models/Actor.h>
 
-#include "../Services/DatabaseService/postgresql/PostgresConnection.h"
 
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
-    /*
     auto logger = LogHelper::Instance().getCurrent();
     try
     {
-        AbstractService *svc = new AuthenticationService();
+        AbstractService *svc = new DatabaseService();
         try
         {
             svc->loadConfiguration("configuration.json");
@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
     {
         logger->writeLine(ex.what());
     }
-    */
+
     /*
     qRegisterMetaType<Actor>("Actor");
 
@@ -48,10 +48,6 @@ int main(int argc, char *argv[])
         qDebug() << actor->getEntityTypeId().toString();
     }
     */
-    PostgresConnection conn;
-    conn.open();
-    conn.exec("select * from actors;");
-    conn.close();
 
     return a.exec();
 }

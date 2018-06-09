@@ -1,7 +1,10 @@
 #include "PostgresConnection.h"
 #include "PostgresQuery.h"
+#include <Core/Helpers/StringHelper.h>
+#include "DatabaseServiceConfiguration.h"
 
-PostgresConnection::PostgresConnection()
+PostgresConnection::PostgresConnection() :
+    _connection(nullptr)
 {
 
 }
@@ -9,15 +12,41 @@ PostgresConnection::PostgresConnection()
 
 bool PostgresConnection::open()
 {
-    NOT_IMPL
+    Q_ASSERT(getConfiguration()->getIsLoad());
+
+    auto cfg = static_cast<DatabaseServiceConfiguration *>(getConfiguration())->getDatabaseConfiguration();
+
+    _connection = PQsetdbLogin(
+                StringHelper::StringToConstChar(cfg.getHost()),
+                StringHelper::StringToConstChar(QString::number(cfg.getPort())),
+                "",
+                "",
+                StringHelper::StringToConstChar(cfg.getDatabase()),
+                StringHelper::StringToConstChar(cfg.getUsername()),
+                StringHelper::StringToConstChar(cfg.getPassword()));
+
+    if (PQstatus(_connection) == CONNECTION_BAD)
+    {
+        throw DatabaseConnectException(
+                    cfg.getUsername(),
+                    cfg.getPassword(),
+                    cfg.getHost(),
+                    cfg.getPort(),
+                    cfg.getDatabase());
+    }
+    return true;
 }
 
 void PostgresConnection::close()
 {
-    NOT_IMPL
+    if (_connection == nullptr)
+        return;
+
+    PQfinish(_connection);
 }
 
 AbstractDatabaseQuery *PostgresConnection::exec(QString sql)
 {
-    NOT_IMPL
+    Q_ASSERT(_connection != nullptr);
+    return new PostgresQuery(PQexec(_connection, StringHelper::StringToConstChar(sql)));
 }

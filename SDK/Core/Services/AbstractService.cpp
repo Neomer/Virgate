@@ -35,17 +35,17 @@ void AbstractService::loadConfiguration(QString configurationFileName)
 {
     if (_configuration == nullptr)
     {
-
+        throw BaseException("Configuration is not initalized!");
     }
 
     QFile file(configurationFileName);
     if (!file.exists())
     {
-        throw ResourceAccessException(configurationFileName, "Файл конфигурации не найден!");
+        throw ResourceAccessException(configurationFileName, "Configuration file not found!");
     }
     if (!file.open(QIODevice::ReadOnly))
     {
-        throw ResourceAccessException(configurationFileName, "Файл конфигурации недоступен для чтения!");
+        throw ResourceAccessException(configurationFileName, "Configuration file access denied!");
     }
     QJsonParseError err;
     QJsonDocument json = QJsonDocument::fromJson(file.readAll(), &err);
@@ -56,7 +56,7 @@ void AbstractService::loadConfiguration(QString configurationFileName)
     }
     if (!json.isObject() || !json.object().contains(_configuration->getConfigurationSection()))
     {
-        throw DataFormatException(QString("В файле конфигурации не обнаружены настройки для сервиса!"));
+        throw DataFormatException(QString("Service's section not found in configuration file!"));
     }
     _configuration->fromJson(json.object()[_configuration->getConfigurationSection()].toObject());
 }

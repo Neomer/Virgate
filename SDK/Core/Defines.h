@@ -24,5 +24,11 @@
                              name(name const &) = delete; \
                              name& operator= (name const&) = delete; \
 
+#if defined(EXPORT)
+#  define EXPORT Q_DECL_EXPORT
+#else
+#  define EXPORT Q_DECL_IMPORT
+#endif
+
 
 #endif // DEFINES_H

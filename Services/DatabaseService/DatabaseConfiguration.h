@@ -4,6 +4,7 @@
 #include "databaseservice_global.h"
 #include <Core/Defines.h>
 #include <Core/Serialization/AbstractJsonSerializable.h>
+#include <Core/Services/AbstractConfiguration.h>
 
 class DATABASESERVICESHARED_EXPORT DatabaseConfiguration : public AbstractJsonSerializable
 {
@@ -14,6 +15,7 @@ public:
     PROP(quint16, Port)
     PROP(QString, Username)
     PROP(QString, Password)
+    PROP(QString, Database)
 
     // AbstractJsonSerializable interface
 public:

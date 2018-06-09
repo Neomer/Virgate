@@ -5,6 +5,7 @@
 #include <Core/Services/AbstractService.h>
 #include "DatabaseServiceConfiguration.h"
 #include "AbstractDatabaseConnection.h"
+#include "DatabaseQueryException.h"
 
 #include <Models/IDatabaseStored.h>
 #include <Models/AbstractEntity.h>
@@ -24,6 +25,7 @@ public:
 
     void SaveEntityImmediatly(AbstractEntity *entity);
     void SaveEntity(AbstractEntity *entity);
+    void Load(Guid id, AbstractEntity *entity);
 
 private:
     Guid _moduleId;

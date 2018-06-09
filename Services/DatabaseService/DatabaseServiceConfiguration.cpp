@@ -18,7 +18,9 @@ void DatabaseServiceConfiguration::toJson(QJsonObject &object)
 void DatabaseServiceConfiguration::fromJson(const QJsonObject &object)
 {
     DatabaseConfiguration cfg;
-    QJsonObject dbObj = object["database"].toObject();
+    QJsonObject dbObj = object["Database"].toObject();
     cfg.fromJson(dbObj);
     setDatabaseConfiguration(cfg);
+
+    AbstractConfiguration::fromJson(object);
 }

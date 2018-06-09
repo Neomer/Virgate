@@ -26,13 +26,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         RandomHelper.cpp \
-    LogHelper.cpp
+    LogHelper.cpp \
+    StringHelper.cpp
 
 HEADERS += \
         RandomHelper.h \
         randomhelper_global.h \ 
     ../Defines.h \
-    LogHelper.h
+    LogHelper.h \
+    StringHelper.h
 
 unix {
     target.path = /usr/lib
