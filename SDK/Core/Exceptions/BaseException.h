@@ -12,6 +12,7 @@
 class EXCEPTIONSSHARED_EXPORT BaseException : public QException
 {
 public:
+    BaseException();
     BaseException(QString message);
     BaseException(const char *message);
 

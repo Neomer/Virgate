@@ -1,6 +1,11 @@
 #include "BaseException.h"
 
 
+BaseException::BaseException()
+{
+
+}
+
 BaseException::BaseException(QString message) :
     _message(message)
 {

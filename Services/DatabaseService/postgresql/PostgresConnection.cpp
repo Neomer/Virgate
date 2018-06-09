@@ -9,15 +9,15 @@ PostgresConnection::PostgresConnection()
 
 bool PostgresConnection::open()
 {
-    throw NotImplementedException();
+    NOT_IMPL
 }
 
 void PostgresConnection::close()
 {
-    throw NotImplementedException();
+    NOT_IMPL
 }
 
 AbstractDatabaseQuery *PostgresConnection::exec(QString sql)
 {
-    throw NotImplementedException();
+    NOT_IMPL
 }

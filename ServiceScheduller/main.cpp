@@ -39,6 +39,7 @@ int main(int argc, char *argv[])
         logger->writeLine(ex.what());
     }
     */
+    /*
     qRegisterMetaType<Actor>("Actor");
 
     auto actor = AbstractEntityFactory::Instance().CreateEntity<Actor>("Actor");
@@ -46,7 +47,7 @@ int main(int argc, char *argv[])
     {
         qDebug() << actor->getEntityTypeId().toString();
     }
-
+    */
     PostgresConnection conn;
     conn.open();
     conn.exec("select * from actors;");

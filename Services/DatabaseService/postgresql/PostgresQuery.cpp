@@ -15,7 +15,7 @@ void PostgresQuery::close()
 
 bool PostgresQuery::isEmpty()
 {
-    throw NotImplementedException();
+    NOT_IMPL
 }
 
 bool PostgresQuery::isValid()
@@ -25,22 +25,22 @@ bool PostgresQuery::isValid()
 
 bool PostgresQuery::first()
 {
-    throw NotImplementedException();
+    NOT_IMPL
 }
 
 bool PostgresQuery::last()
 {
-    throw NotImplementedException();
+    NOT_IMPL
 }
 
 bool PostgresQuery::next()
 {
-    throw NotImplementedException();
+    NOT_IMPL
 }
 
 bool PostgresQuery::prev()
 {
-    throw NotImplementedException();
+    NOT_IMPL
 }
 
 int PostgresQuery::rowCount()
